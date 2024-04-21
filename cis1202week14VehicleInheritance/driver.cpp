@@ -7,6 +7,7 @@ This program is a driver file to test the class files. It calls functions, colle
 #include "perslib.h"
 #include "Vehicle.h"
 #include "Car.h"
+#include "Truck.h"
 
 
 
@@ -16,7 +17,7 @@ int main() {
 
 	// declare and intialize variables
 	string userManufacturer;
-	int userYear, userNumOfDoors;
+	int userYear, userNumOfDoors, userTowCap;
 
 	// Vehicle Info
 	cout << "Vehicle:\nEnter the manufacturer: ";
@@ -38,6 +39,19 @@ int main() {
 	c1.setManufacturer(userManufacturer);
 	c1.setYear(userYear);
 	c1.displayInfo();
+
+	//Truck Info
+	cout << "\nTruck:\nEnter the manufacturer: ";
+	cin.ignore();
+	getline(cin, userManufacturer);
+	cout << "Enter year: ";
+	cin >> userYear;
+	cout << "Enter towing capacity: ";
+	cin >> userTowCap;
+	Truck t1 = Truck(userTowCap);
+	t1.setManufacturer(userManufacturer);
+	t1.setYear(userYear);
+	t1.displayInfo();
 
 
 	endProg();
